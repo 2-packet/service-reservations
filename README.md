@@ -70,7 +70,8 @@ Creates a new entry in the database and responds with 201 status code if entry s
   '7:45 PM': 7,
   '8:00 PM': 4,
   '8:15 PM': 10,
-  '8:30 PM': 8 }```
+  '8:30 PM': 8 }
+  ```
 
 If entry structure differs, a 400 (Bad request) is returned.
 
