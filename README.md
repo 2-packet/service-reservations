@@ -51,10 +51,10 @@ npm start
 
 | Type  | Route | Description |
 | ------------- | ------------- |------------- |
-| ```GET:```  | ```/api/:id/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. |
-| ```PUT:```  | ```/api/:id/reservations```  | Updates entry corresponding to specified id and responds with 200 status code if successful, 204 if entry is not found. |
-| ```POST:```  | ```/api/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. See example request body. |
-| ```DELETE:```  | ```/api/:id/reservations```  | Deletes entry corresponding to specified id and responds with 204 status code upon successful scheduling. A 405 status code is sent if no such entry exists. |
+| GET  | ```/api/:id/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. |
+| PUT  | ```/api/:id/reservations```  | Updates entry corresponding to specified id and responds with 200 status code if successful, 204 if entry is not found. |
+| POST  | ```/api/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. See example request body. |
+| DELETE  | ```/api/:id/reservations```  | Deletes entry corresponding to specified id and responds with 204 status code upon successful scheduling. A 405 status code is sent if no such entry exists. |
 
 ```POST: /api/reservations```
 Example request body:
