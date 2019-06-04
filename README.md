@@ -48,14 +48,15 @@ npm start
 - In a broswer, go to: localhost:3000
 
 ## RESTful API Routes
-```GET: /api/:id/reservations```
-Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found.
-
-```PUT: /api/:id/reservations```
-Updates entry corresponding to specified id and responds with 200 status code if successful, 204 if entry is not found.
+| Type  | Route | Description |
+| ------------- | ------------- |
+| ```GET:```  | ```/api/:id/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. |
+| ```PUT:```  | ```/api/:id/reservations```  | Updates entry corresponding to specified id and responds with 200 status code if successful, 204 if entry is not found. |
+| ```POST:```  | ```/api/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. See example request body. |
+| ```DELETE:```  | ```/api/:id/reservations```  | Deletes entry corresponding to specified id and responds with 204 status code upon successful scheduling. A 405 status code is sent if no such entry exists. |
 
 ```POST: /api/reservations```
-Creates a new entry in the database and responds with 201 status code if entry structure matches. Body structure must follow:
+Example request body:
 
 ```{ id: 1,
   name: 'Kinjo',
@@ -74,6 +75,3 @@ Creates a new entry in the database and responds with 201 status code if entry s
   ```
 
 If entry structure differs, a 400 (Bad request) is returned.
-
-```DELETE: /api/:id/reservations```
-Deletes entry corresponding to specified id and responds with 204 status code upon successful scheduling. A 405 status code is sent if no such entry exists.
