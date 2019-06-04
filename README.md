@@ -48,8 +48,9 @@ npm start
 - In a broswer, go to: localhost:3000
 
 ## RESTful API Routes
+
 | Type  | Route | Description |
-| ------------- | ------------- |
+| ------------- | ------------- |------------- |
 | ```GET:```  | ```/api/:id/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. |
 | ```PUT:```  | ```/api/:id/reservations```  | Updates entry corresponding to specified id and responds with 200 status code if successful, 204 if entry is not found. |
 | ```POST:```  | ```/api/reservations```  | Responds with entry in database corresponding to specified id. Responds with 200 status code if successful, 404 if not found. See example request body. |
