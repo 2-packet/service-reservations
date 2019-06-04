@@ -1,6 +1,6 @@
 const faker = require('faker');
 
-const Availability = require('./db.js');
+const Availability = require('./index.js');
 
 const seats = () => faker.random.number({
   min: 2,

@@ -4,11 +4,9 @@
   "description": "> Project description",
   "main": ".eslintrc.js",
   "scripts": {
-    "build-dev": "webpack -d -w",
-    "start-dev": "nodemon server/connection.js",
-    "build": "webpack -d",
-    "start": "node server/connection.js",
-    "seed": "node db/seed.js",
+    "react-dev": "webpack -d -w",
+    "start": "nodemon server",
+    "seed": "node server/db/seed.js",
     "test": "jest"
   },
   "repository": {

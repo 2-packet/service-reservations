@@ -16,9 +16,9 @@
   -webkit-box-shadow: 0 2px 8px rgba(153, 153, 153, 0.4);
   box-shadow: 0 2px 8px rgba(153, 153, 153, 0.4);
   width: 336px;
-  position:relative;
+  /* position:relative;
   top:214px;
-  left:900px;
+  left:900px; */
   padding-top: 20px;
   background-color: #fff
 }

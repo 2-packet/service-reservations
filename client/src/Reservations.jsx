@@ -36,7 +36,7 @@ class Reservations extends React.Component {
       tooFar: false,
       availTimes: false,
     };
-
+    
     this.handleSize = this.handleSize.bind(this);
     this.handleTime = this.handleTime.bind(this);
     this.handleDate = this.handleDate.bind(this);
@@ -49,6 +49,11 @@ class Reservations extends React.Component {
     this.noAvailability = this.noAvailability.bind(this);
   }
 
+  componentDidMount() {
+    this.getBookings();
+    axios.delete('/api/1/reservations');
+  }
+  
   handleSize(e) {
     this.setState({
       partySize: e.target.value,
@@ -209,9 +214,10 @@ class Reservations extends React.Component {
   }
 
   getBookings() {
-    let parseId = this.props.urlId.split('/');
+    let urlId = window.location.pathname;
+    let parseId = urlId !== '/' ? urlId.split('/') : [0];
     const id = parseId[parseId.length - 1];
-    axios.get(`http://localhost:3020/${id}/reservations`)
+    axios.get(`/api/${id}/reservations`)
       .then((res) => {
         this.setState({
           bookings: res.data.booked,
@@ -224,9 +230,6 @@ class Reservations extends React.Component {
       });
   }
 
-  componentDidMount() {
-    this.getBookings();
-  }
 
   render() {
     return (
@@ -266,9 +269,5 @@ class Reservations extends React.Component {
     );
   }
 }
-
-Reservations.propTypes = {
-  urlId: PropTypes.string,
-};
 
 export default Reservations;
