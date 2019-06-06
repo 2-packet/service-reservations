@@ -59,7 +59,37 @@ npm start
 ```POST: /api/reservations```
 Example request body:
 
-```{ id: 1,
+```
+{ 
+  name: 'Kinjo',
+  booked: 12,
+  '6:00 PM': 6,
+  '6:15 PM': 7,
+  '6:30 PM': 9,
+  '6:45 PM': 2,
+  '7:00 PM': 9,
+  '7:15 PM': 5,
+  '7:30 PM': 10,
+  '7:45 PM': 7,
+  '8:00 PM': 4,
+  '8:15 PM': 10,
+  '8:30 PM': 8 }
+  ```
+
+  ```PUT: /api/1/reservations```
+Example request body:
+
+```
+{ 
+  name: 'Kinjo',
+  '6:00 PM': 6 }
+```
+
+```GET: /api/1/reservations```
+Example response:
+
+```
+{ 
   name: 'Kinjo',
   booked: 12,
   '6:00 PM': 6,

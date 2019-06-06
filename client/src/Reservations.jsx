@@ -51,7 +51,6 @@ class Reservations extends React.Component {
 
   componentDidMount() {
     this.getBookings();
-    axios.delete('/api/1/reservations');
   }
   
   handleSize(e) {
