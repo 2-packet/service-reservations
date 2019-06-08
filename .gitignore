@@ -26,3 +26,6 @@ dist/
 
 public/bundle.js
 package-lock.json
+
+# CSV Data
+data.csv

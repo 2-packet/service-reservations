@@ -5,6 +5,12 @@ const sequelize = new Sequelize('reservations', 'root', 'password', {
   host: 'localhost',
   dialect: 'mysql',
   logging: false,
+  pool: {
+    max: 100000,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 });
 
 sequelize
