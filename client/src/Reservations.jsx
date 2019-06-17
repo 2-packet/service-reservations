@@ -222,7 +222,7 @@ class Reservations extends React.Component {
           bookings: res.data.booked,
           resName: res.data.name,
           allData: res.data,
-        });
+        }, () => console.log(res));
       })
       .catch((err) => {
         console.log(err);

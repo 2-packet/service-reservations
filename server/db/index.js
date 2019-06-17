@@ -1,15 +1,15 @@
 const Sequelize = require('sequelize');
 
 // change user: 'root' and password: 'password' with your credentials
-const sequelize = new Sequelize('reservations', 'root', 'password', {
+const sequelize = new Sequelize('sdc', 'postgres', 'umairnadeem', {
   host: 'localhost',
-  dialect: 'mysql',
+  dialect: 'postgres',
   logging: false,
   pool: {
-    max: 100000,
+    max: 1,
     min: 0,
-    acquire: 30000,
-    idle: 10000
+    acquire: 1000,
+    idle: 1000
   }
 });
 
@@ -22,7 +22,7 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
-const Availability = sequelize.define('restaurant',
+const Reservations = sequelize.define('reservations',
   {
     name: {
       type: Sequelize.STRING,
@@ -68,4 +68,4 @@ const Availability = sequelize.define('restaurant',
     timestamps: false,
   });
 
-module.exports = Availability;
+module.exports = Reservations;
