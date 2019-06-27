@@ -9,7 +9,7 @@ const { Pool } = require('pg');
 // };
 
 const connection = {
-  connectionString: `postgres://postgres:umairnadeem@52.90.170.135:5432/sdc`
+  connectionString: `postgres://postgres:umairnadeem@18.208.154.74:5432/sdc`
 };
 
 module.exports = new Pool(connection);

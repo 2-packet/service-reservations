@@ -10,8 +10,6 @@
 
 const pool = require('../db/postgres');
 
-const promise = new Promise(resolve => resolve());
-
 const find = id => pool.query(`SELECT * FROM reservations WHERE id = $1`, [id]);
 
 const update = (id, payload) => {
@@ -22,7 +20,8 @@ const update = (id, payload) => {
 
 const insert = (payload) => {
   let values = Object.keys(payload).filter(key => key.includes('PM')).map(elem => payload[elem]);
-  return pool.query(`INSERT INTO reservations("6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM") values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`, values);
+  values.push(payload.name, payload.booked);
+  return pool.query(`INSERT INTO reservations("6:00 PM", "6:15 PM", "6:30 PM", "6:45 PM", "7:00 PM", "7:15 PM", "7:30 PM", "7:45 PM", "8:00 PM", "8:15 PM", "8:30 PM", "name", "booked") values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`, values);
 };
 
 const remove = id => pool.query(`DELETE FROM reservations WHERE id = $1`, [id]);

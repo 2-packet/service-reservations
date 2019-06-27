@@ -118,6 +118,7 @@ class Reservations extends React.Component {
   }
 
   checkAvailability() {
+    console.log(this.state);
     const timeSlots = [];
 
     delete this.state.allData.id;
